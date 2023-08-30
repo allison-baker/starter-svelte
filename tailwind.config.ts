@@ -19,7 +19,7 @@ const config = {
 	plugins: [
 		typography,
 		skeleton({
-			themes: { preset: [ "skeleton" ] }
+			themes: { preset: [ "hamlindigo" ] }
 		})
 	]
 } satisfies Config;
