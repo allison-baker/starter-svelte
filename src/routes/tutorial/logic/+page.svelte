@@ -8,11 +8,33 @@
     
     let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'];
     let selected = colors[0];
+
+    import Thing from '$lib/components/Thing.svelte';
+
+	let things = [
+		{ id: 1, name: 'apple' },
+		{ id: 2, name: 'banana' },
+		{ id: 3, name: 'carrot' },
+		{ id: 4, name: 'doughnut' },
+		{ id: 5, name: 'egg' }
+	];
+
+	function handleClick() {
+		things = things.slice(1);
+	}
+
+    import { getRandomNumber } from '$lib/utils.js';
+
+	let promise = getRandomNumber();
+
+	function handlePromise() {
+		promise = getRandomNumber();
+	}
 </script>
 
 <button class="rounded-full bg-pink-600 px-4 py-2 my-4" on:click={increment}>
 	Clicked {count}
-	{count === 1 ? 'time' : 'times'}
+	{count === 1 ? 'Time' : 'Times'}
 </button>
 
 {#if count >= 10}
@@ -23,7 +45,7 @@
 	<p>{count} is between 5 and 10</p>
 {/if}
 
-<h1 style="color: {selected}">Pick a colour</h1>
+<h1 style="color: {selected}">Pick a Color</h1>
 
 <div>
     {#each colors as color, i}
@@ -36,6 +58,26 @@
 	>{i + 1}</button>
     {/each}
 </div>
+
+<button class="rounded-full bg-pink-600 px-4 py-2 my-4" on:click={handleClick}>
+	Remove First Thing
+</button>
+
+{#each things as thing (thing.id)}
+	<Thing name={thing.name} />
+{/each}
+
+<button class="rounded-full bg-pink-600 px-4 py-2 my-4" on:click={handlePromise}>
+	Generate Random Number
+</button>
+
+{#await promise}
+    <p>...waiting</p>
+{:then number}
+    <p>The number is {number}</p>
+{:catch error}
+    <p class="text-red-600">{error.message}</p>
+{/await}
 
 <style>
 	h1 {
