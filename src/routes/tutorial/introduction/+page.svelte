@@ -11,13 +11,3 @@
 <p class='font-sans text-lime-700 font-bold'>Here is my sample paragraph!</p>
 
 <p>Here is another paragraph.</p>
-
-<Nested />
-
-<!-- <style>
-	p#foo {
-		color: goldenrod;
-		font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-		font-size: 2rem;
-	}
-</style> -->
