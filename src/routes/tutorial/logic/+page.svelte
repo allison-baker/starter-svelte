@@ -1,6 +1,5 @@
 <script lang="ts">
 	let count = 0;
-	$: doubled = count * 2;
 
 	function increment() {
 		count += 1;
@@ -23,13 +22,23 @@
 		things = things.slice(1);
 	}
 
-    import { getRandomNumber } from '$lib/utils.js';
+    import { getRandomNumber } from '$lib/utils/delayFunction.ts';
+	import { ProgressRadial } from '@skeletonlabs/skeleton';
 
 	let promise = getRandomNumber();
 
 	function handlePromise() {
 		promise = getRandomNumber();
 	}
+
+	import {faker} from '@faker-js/faker';
+	const twentyFiveAvatars = [...Array(25)].map(() => {
+		const lastName = faker.person.lastName();
+		return {
+			lastName,
+			avatar: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${faker.person.firstName()}`,
+		}
+	})
 </script>
 
 <h1 class="m-2 text-2xl">Logic</h1>
@@ -74,12 +83,21 @@
 </button>
 
 {#await promise}
-    <p class="m-2">...waiting</p>
+	<div class="m-2"><ProgressRadial value={undefined} /></div>
 {:then number}
     <p class="m-2">The number is {number}</p>
 {:catch error}
     <p class="text-red-600 m-2">{error.message}</p>
 {/await}
+
+<div class="flex flex-wrap bg-green-200 m-2">
+	{#each twentyFiveAvatars as { lastName, avatar }}
+	<div class="flex items-center">
+		<img src={avatar} alt={lastName} class="w-24 h-24 rounded-full" />
+		<p class="text-slate-800 font-bold">{lastName}</p>
+	</div>
+	{/each}
+</div>
 
 <style>
 	h1 {
