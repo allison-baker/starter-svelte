@@ -32,22 +32,24 @@
 	}
 </script>
 
-<button class="rounded-full bg-pink-600 px-4 py-2 my-4" on:click={increment}>
+<h1 class="m-2 text-2xl">Logic</h1>
+
+<button class="rounded-full m-2 bg-pink-600 px-4 py-2 my-4" on:click={increment}>
 	Clicked {count}
 	{count === 1 ? 'Time' : 'Times'}
 </button>
 
 {#if count >= 10}
-	<p>{count} is greater than or equal to 10</p>
+	<p class="m-2">{count} is greater than or equal to 10</p>
 {:else if count < 5}
-	<p>{count} is between 0 and 5</p>
+	<p class="m-2">{count} is between 0 and 5</p>
 {:else}
-	<p>{count} is between 5 and 10</p>
+	<p class="m-2">{count} is between 5 and 10</p>
 {/if}
 
-<h1 style="color: {selected}">Pick a Color</h1>
+<h1 style="color: {selected}" class=m-2>Pick a Color</h1>
 
-<div>
+<div class="m-2">
     {#each colors as color, i}
 	<button
         class="colors"
@@ -59,7 +61,7 @@
     {/each}
 </div>
 
-<button class="rounded-full bg-pink-600 px-4 py-2 my-4" on:click={handleClick}>
+<button class="rounded-full bg-pink-600 px-4 py-2 my-4 mx-2" on:click={handleClick}>
 	Remove First Thing
 </button>
 
@@ -67,16 +69,16 @@
 	<Thing name={thing.name} />
 {/each}
 
-<button class="rounded-full bg-pink-600 px-4 py-2 my-4" on:click={handlePromise}>
+<button class="rounded-full bg-pink-600 px-4 py-2 my-4 mx-2" on:click={handlePromise}>
 	Generate Random Number
 </button>
 
 {#await promise}
-    <p>...waiting</p>
+    <p class="m-2">...waiting</p>
 {:then number}
-    <p>The number is {number}</p>
+    <p class="m-2">The number is {number}</p>
 {:catch error}
-    <p class="text-red-600">{error.message}</p>
+    <p class="text-red-600 m-2">{error.message}</p>
 {/await}
 
 <style>
@@ -106,3 +108,6 @@
 		box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.2);
 	}
 </style>
+
+<a href="../../tutorial" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Tutorials</a>
+<a href="../../" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Home</a>

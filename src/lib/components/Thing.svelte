@@ -16,4 +16,4 @@
 	const emoji = emojis[name];
 </script>
 
-<p>{emoji} = {name}</p>
+<p class="m-2">{emoji} = {name}</p>
