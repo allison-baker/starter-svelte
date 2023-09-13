@@ -1,4 +1,9 @@
 <script lang="ts">
+	import Thing from '$lib/components/Thing.svelte';
+	import { getRandomNumber } from '$lib/utils/delayFunction.ts';
+	import { ProgressRadial } from '@skeletonlabs/skeleton';
+	import { faker } from '@faker-js/faker'
+
 	let count = 0;
 
 	function increment() {
@@ -7,8 +12,6 @@
     
     let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'];
     let selected = colors[0];
-
-    import Thing from '$lib/components/Thing.svelte';
 
 	let things = [
 		{ id: 1, name: 'apple' },
@@ -22,16 +25,12 @@
 		things = things.slice(1);
 	}
 
-    import { getRandomNumber } from '$lib/utils/delayFunction.ts';
-	import { ProgressRadial } from '@skeletonlabs/skeleton';
-
 	let promise = getRandomNumber();
 
 	function handlePromise() {
 		promise = getRandomNumber();
 	}
 
-	import {faker} from '@faker-js/faker';
 	const twentyFiveAvatars = [...Array(25)].map(() => {
 		const lastName = faker.person.lastName();
 		return {

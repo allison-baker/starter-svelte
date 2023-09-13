@@ -4,4 +4,5 @@
 	<a href="tutorial/reactivity/" class="rounded-full block bg-pink-600 w-40 text-center py-2 mx-2 my-4">Reactivity</a>
 	<a href="tutorial/props/" class="rounded-full block bg-pink-600 w-40 text-center py-2 mx-2 my-4">Props</a>
 	<a href="tutorial/logic/" class="rounded-full block bg-pink-600 w-40 text-center py-2 mx-2 my-4">Logic</a>
+	<a href="tutorial/events/" class="rounded-full block bg-pink-600 w-40 text-center py-2 mx-2 my-4">Events</a>
 </div>
