@@ -15,7 +15,7 @@
 
 <main>
 	<header>
-		<h1>Svelte Tutorials</h1>
+		<h1 class="m-2 mt-4 text-2xl">Svelte Tutorials</h1>
 	</header>
 	<nav>
 		<button class="rounded-full bg-pink-600 w-40 text-center py-2 mx-2 my-4" on:click={() => reassignRoute('Introduction')}>Introduction</button>
