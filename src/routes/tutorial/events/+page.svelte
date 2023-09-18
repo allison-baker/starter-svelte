@@ -1,19 +1,27 @@
 <script lang="ts">
-	import Inner from "$lib/components/Inner.svelte"
+	// import Inner from "$lib/components/Inner.svelte"
 	import { getModalStore } from '@skeletonlabs/skeleton'
+	import type { ModalSettings } from '@skeletonlabs/skeleton'
+	import Outer from "$lib/components/Outer.svelte"
+	import BigRedButton from '$lib/components/BigRedButton.svelte';
 	
 	let m = { x: 0, y: 0 };
 
-	/* function handleMove(event: { clientX: number; clientY: number }) {
-		m.x = event.clientX;
-		m.y = event.clientY;
-	} */
+	const modalStore = getModalStore()
 
-    function handleMessage(event: { detail: { text: any; }; }) {
-        alert(event.detail.text)
+    function handleMessage(event: {detail: {text: any}}) {
+        const modal: ModalSettings = {
+			type: 'alert',
+			title: 'Hello!',
+			body: event.detail.text
+		}
+		modalStore.trigger(modal)
+		//alert(event.detail.text)
     }
 
-	const modalStore = getModalStore()
+	function handleClick() {
+		alert('You clicked the big red button!')
+	}
 </script>
 
 <div
@@ -29,7 +37,9 @@
 	Click Me
 </button>
 
-<Inner on:message={handleMessage}/>
+<Outer on:message={handleMessage}/>
+
+<BigRedButton on:click={handleClick} />
 
 <a href="../../tutorial" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Tutorials</a>
 <a href="../../" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Home</a>

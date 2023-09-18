@@ -5,7 +5,7 @@
 
 	function sayHello() {
 		dispatch('message', {
-			text: 'Insert funny message here. Or some pun or something. I\'m out of creative juice.'
+			text: 'You must have clicked the message button. Good job!'
 		});
 	}
 </script>
