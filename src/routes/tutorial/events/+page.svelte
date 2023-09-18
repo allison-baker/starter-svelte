@@ -33,13 +33,10 @@
 	<p class="text-slate-800 font-bold">The pointer is at {m.x} x {m.y}</p>
 </div>
 
-<button class="rounded-full block bg-pink-600 w-40 text-center py-2 mx-2 my-4"on:click={() => alert('clicked')}>
+<button class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4"on:click={() => alert('clicked')}>
 	Click Me
 </button>
 
 <Outer on:message={handleMessage}/>
 
 <BigRedButton on:click={handleClick} />
-
-<a href="../../tutorial" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Tutorials</a>
-<a href="../../" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Home</a>

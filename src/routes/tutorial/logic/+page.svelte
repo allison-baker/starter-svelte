@@ -42,7 +42,7 @@
 
 <h1 class="m-2 text-2xl">Logic</h1>
 
-<button class="rounded-full m-2 bg-pink-600 px-4 py-2 my-4" on:click={increment}>
+<button class="rounded-full m-2 bg-green-600 px-4 py-2 my-4" on:click={increment}>
 	Clicked {count}
 	{count === 1 ? 'Time' : 'Times'}
 </button>
@@ -69,7 +69,7 @@
     {/each}
 </div>
 
-<button class="rounded-full bg-pink-600 px-4 py-2 my-4 mx-2" on:click={handleClick}>
+<button class="rounded-full bg-green-600 px-4 py-2 my-4 mx-2" on:click={handleClick}>
 	Remove First Thing
 </button>
 
@@ -77,7 +77,7 @@
 	<Thing name={thing.name} />
 {/each}
 
-<button class="rounded-full bg-pink-600 px-4 py-2 my-4 mx-2" on:click={handlePromise}>
+<button class="rounded-full bg-green-600 px-4 py-2 my-4 mx-2" on:click={handlePromise}>
 	Generate Random Number
 </button>
 
@@ -125,6 +125,3 @@
 		box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.2);
 	}
 </style>
-
-<a href="../../tutorial" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Tutorials</a>
-<a href="../../" class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4">Back to Home</a>
