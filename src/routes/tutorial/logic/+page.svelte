@@ -55,6 +55,10 @@
 	<p class="m-2">{count} is between 5 and 10</p>
 {/if}
 
+<p class="m-2 text-sm text-slate-400 font-bold">This button uses if and else if statements to show where count is between 0, 5, and 10.</p>
+
+<hr class="border-2" />
+
 <h1 style="color: {selected}" class=m-2>Pick a Color</h1>
 
 <div class="m-2">
@@ -69,6 +73,10 @@
     {/each}
 </div>
 
+<p class="m-2 text-sm text-slate-400 font-bold">This section uses and each block to go through an array of colors.</p>
+
+<hr class="border-2" />
+
 <button class="rounded-full block bg-green-600 px-4 py-2 my-4 mx-2" on:click={handleClick}>
 	Remove First Thing
 </button>
@@ -76,6 +84,10 @@
 {#each things as thing (thing.id)}
 	<Thing name={thing.name} />
 {/each}
+
+<p class="m-2 text-sm text-slate-400 font-bold">This section uses an each block to display an array of things with a key so they can be removed.</p>
+
+<hr class="border-2" />
 
 <button class="rounded-full block bg-green-600 px-4 py-2 my-4 mx-2" on:click={handlePromise}>
 	Generate Random Number
@@ -89,6 +101,10 @@
     <p class="text-red-600 m-2">{error.message}</p>
 {/await}
 
+<p class="m-2 text-sm text-slate-400 font-bold">This section uses an await block to handle a promise.</p>
+
+<hr class="border-2" />
+
 <div class="flex flex-wrap bg-green-200 m-2">
 	{#each twentyFiveAvatars as { lastName, avatar }}
 	<div class="flex items-center">
@@ -97,6 +113,8 @@
 	</div>
 	{/each}
 </div>
+
+<p class="m-2 text-sm text-slate-400 font-bold">This section uses an each block to iterate through an array of objects and display them.</p>
 
 <style>
 	h1 {

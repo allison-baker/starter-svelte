@@ -41,7 +41,14 @@
         Reset Count
     </button>
 </div>
+
+<p class="m-2 text-sm text-slate-400 font-bold">This section demonstrates reactive values.</p>
+
+<hr class="border-2" />
+
 <div class="m-2">
     <p>{numbers.join(' + ')} = {sum}</p>
     <button class="rounded-full block bg-green-600 px-4 py-2 my-4" on:click={addNumber}>Add a Number</button>
 </div>
+
+<p class="m-2 text-sm text-slate-400 font-bold">This section demonstrates grouping reactive statements together with a block.</p>
