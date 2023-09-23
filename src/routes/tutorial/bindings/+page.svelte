@@ -75,7 +75,7 @@
 	</p>
 {/if}
 
-<button class="rounded-full bg-green-600 w-40 text-center py-2 mx-2 my-4" disabled={!yes}>Subscribe</button>
+<button class="rounded-full bg-emerald-600 w-40 text-center py-2 mx-2 my-4" disabled={!yes}>Subscribe</button>
 
 <p class="m-2 text-sm text-slate-400 font-bold">This section demonstrates bind:checked instead of bind:value to toggle states.</p>
 

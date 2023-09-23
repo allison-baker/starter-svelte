@@ -42,7 +42,7 @@
 
 <h1 class="m-2 text-2xl">Logic</h1>
 
-<button class="rounded-full block m-2 bg-green-600 px-4 py-2 my-4" on:click={increment}>
+<button class="rounded-full block m-2 bg-emerald-600 px-4 py-2 my-4" on:click={increment}>
 	Clicked {count}
 	{count === 1 ? 'Time' : 'Times'}
 </button>
@@ -77,7 +77,7 @@
 
 <hr class="border-2" />
 
-<button class="rounded-full block bg-green-600 px-4 py-2 my-4 mx-2" on:click={handleClick}>
+<button class="rounded-full block bg-emerald-600 px-4 py-2 my-4 mx-2" on:click={handleClick}>
 	Remove First Thing
 </button>
 
@@ -89,7 +89,7 @@
 
 <hr class="border-2" />
 
-<button class="rounded-full block bg-green-600 px-4 py-2 my-4 mx-2" on:click={handlePromise}>
+<button class="rounded-full block bg-emerald-600 px-4 py-2 my-4 mx-2" on:click={handlePromise}>
 	Generate Random Number
 </button>
 
@@ -105,7 +105,7 @@
 
 <hr class="border-2" />
 
-<div class="flex flex-wrap bg-green-200 m-2">
+<div class="flex flex-wrap bg-emerald-200 m-2">
 	{#each twentyFiveAvatars as { lastName, avatar }}
 	<div class="flex items-center">
 		<img src={avatar} alt={lastName} class="w-24 h-24 rounded-full" />

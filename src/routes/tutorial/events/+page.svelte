@@ -20,14 +20,14 @@
     }
 
 	function handleClick() {
-		alert('You clicked the big red button!')
+		alert('You clicked the big blue button!')
 	}
 </script>
 
 <h1 class="m-2 text-2xl">Events</h1>
 
 <div
-	class="left-0 top-0 w-full h-96 p-4 bg-green-200"
+	class="left-0 top-0 w-full h-96 p-4 bg-emerald-200"
 	on:pointermove={(e) => {
 		m = { x: Math.floor(e.clientX), y: Math.floor(e.clientY) };
 	}}
@@ -38,7 +38,7 @@
 
 <hr class="border-2" />
 
-<button class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4"on:click={() => alert('clicked')}>
+<button class="rounded-full block bg-emerald-600 w-40 text-center py-2 mx-2 my-4"on:click={() => alert('clicked')}>
 	Click Me
 </button>
 <p class="m-2 text-sm text-slate-400 font-bold">This button demonstrates a simple on:click event handler.</p>

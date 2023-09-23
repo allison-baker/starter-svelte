@@ -1,3 +1,3 @@
-<button class="rounded-full block bg-green-600 w-40 text-center py-2 mx-2 my-4" on:click>
+<button class="rounded-full block bg-sky-200 text-slate-800 text-center py-14 px-4 mx-2 my-4" on:click>
 	Forward Click
 </button>

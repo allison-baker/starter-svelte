@@ -4,7 +4,7 @@
 	let src = 'https://media.giphy.com/media/ICOgUNjpvO0PC/giphy.gif';
 </script>
 
-<h1 class="text-2xl m-2 text-green-600">Welcome to my {name.toUpperCase()} Introduction page!</h1>
+<h1 class="text-2xl m-2 text-emerald-600">Welcome to my {name.toUpperCase()} Introduction page!</h1>
 
 <img {src} alt="animated {gifName}.gif" class="m-2 rounded" />
 
