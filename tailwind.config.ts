@@ -1,5 +1,6 @@
 import { join } from 'path';
 import type { Config } from 'tailwindcss';
+import { myCustomTheme } from './custom-color-theme'
 
 // 1. Import the Skeleton plugin
 import { skeleton } from '@skeletonlabs/tw-plugin';
@@ -19,7 +20,11 @@ const config = {
 	plugins: [
 		typography,
 		skeleton({
-			themes: { preset: [ "hamlindigo" ] }
+			themes: {
+				custom: [
+					myCustomTheme
+				]
+			}
 		})
 	]
 } satisfies Config;

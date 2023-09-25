@@ -19,6 +19,7 @@
 			<svelte:fragment slot="trail">
 				<a href="/" class="text-xl">Home</a>
 				<a href="/tutorial" class="text-xl">Tutorials</a>
+				<a href="/auth/signup" class="text-xl">Sign Up Form</a>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
