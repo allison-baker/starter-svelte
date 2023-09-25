@@ -34,7 +34,7 @@
 
 <h1 class="m-2 text-2xl">Bindings</h1>
 
-<input class="text-black m-2" bind:value={name} />
+<input class="m-2 text-black p-2 rounded-md bg-slate-300" bind:value={name} />
 
 <p class="m-2">Hello {name}!</p>
 
@@ -43,12 +43,12 @@
 <hr class="border-2" />
 
 <label class="block m-2">
-	<input class="text-black my-2" type="number" bind:value={a} min="0" max="10" />
+	<input class="text-black my-2 p-2 rounded-md bg-slate-300" type="number" bind:value={a} min="0" max="10" />
 	<input class="text-black my-2" type="range" bind:value={a} min="0" max="10" />
 </label>
 
 <label class="block m-2">
-	<input class="text-black my-2" type="number" bind:value={b} min="0" max="10" />
+	<input class="text-black my-2 p-2 rounded-md bg-slate-300" type="number" bind:value={b} min="0" max="10" />
 	<input class="text-black my-2" type="range" bind:value={b} min="0" max="10" />
 </label>
 
@@ -77,14 +77,15 @@
 
 <button class="rounded-full bg-emerald-600 w-40 text-center py-2 mx-2 my-4" disabled={!yes}>Subscribe</button>
 
-<p class="m-2 text-sm text-slate-400 font-bold">This section demonstrates bind:checked instead of bind:value to toggle states.</p>
+<p class="m-2 text-sm text-slate-400 font-bold">This section demonstrates using bind:checked to toggle states.</p>
 
 <hr class="border-2" />
 
-<h2 class="text-lg m-2">Insecurity Questions</h2>
+<h2 class="text-lg m-2 text-pink-400 font-bold">Insecurity Questions</h2>
 
-<form class="m-2" on:submit|preventDefault={handleSubmit}>
+<form class="mx-2" on:submit|preventDefault={handleSubmit}>
 	<select
+		class="text-black p-2 rounded-md bg-slate-300"
 		bind:value={selected}
 		on:change={() => (answer = '')}
 	>
@@ -95,9 +96,9 @@
 		{/each}
 	</select>
 
-	<input bind:value={answer} />
+	<input class="text-black p-2 rounded-md bg-slate-300" bind:value={answer} />
 
-	<button disabled={!answer} type="submit">
+	<button class="rounded-full bg-emerald-600 w-40 text-center py-2 mx-2 my-4" disabled={!answer} type="submit">
 		Submit
 	</button>
 </form>
