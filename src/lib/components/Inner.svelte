@@ -10,6 +10,6 @@
 	}
 </script>
 
-<button class="rounded-full block bg-emerald-600 w-40 text-center py-2 mx-2 my-4" on:click={sayHello}>
+<button class="btn variant-filled-secondary mx-2 my-4" on:click={sayHello}>
 	Click for Message
 </button>

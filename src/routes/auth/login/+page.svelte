@@ -12,15 +12,15 @@
 </script>
 
 <div class="h-full mx-auto flex justify-center items-center container">
-	<div class="card bg-slate-100 text-center w-1/3 rounded-lg">
+	<div class="card text-center w-1/3 rounded-lg">
 		<form class="form flex flex-col items-center space-y-10 py-8" on:submit={handleSubmit}>
-			<h1 class="text-3xl font-bold text-primary-400">Welcome Back!</h1>
+			<h1 class="text-3xl font-bold text-primary-600 dark:text-primary-400">Welcome Back!</h1>
 			<input
 				required
 				autocomplete="email"
 				type="email"
 				placeholder="Email"
-				class="p-2 w-1/2 rounded-md text-surface-800 bg-surface-50"
+				class="p-2 w-1/2 rounded-md text-surface-800 bg-tertiary-200"
 				bind:value={credentials.email}
 			/>
 			<input
@@ -28,7 +28,7 @@
 				autocomplete="current-password"
 				type="password"
 				placeholder="Password"
-				class="p-2 w-1/2 rounded-md text-surface-800 bg-surface-50"
+				class="p-2 w-1/2 rounded-md text-surface-800 bg-tertiary-200"
 				bind:value={credentials.password}
 			/>
 			<input

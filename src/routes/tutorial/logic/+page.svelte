@@ -42,7 +42,7 @@
 
 <h1 class="m-2 text-2xl">Logic</h1>
 
-<button class="rounded-full block m-2 bg-emerald-600 px-4 py-2 my-4" on:click={increment}>
+<button class="btn variant-filled-secondary mx-2 my-4" on:click={increment}>
 	Clicked {count}
 	{count === 1 ? 'Time' : 'Times'}
 </button>
@@ -55,7 +55,7 @@
 	<p class="m-2">{count} is between 5 and 10</p>
 {/if}
 
-<p class="m-2 text-sm text-slate-400 font-bold">This button uses if and else if statements to show where count is between 0, 5, and 10.</p>
+<p class="m-2 text-sm font-bold">This button uses if and else if statements to show where count is between 0, 5, and 10.</p>
 
 <hr class="border-2" />
 
@@ -73,11 +73,11 @@
     {/each}
 </div>
 
-<p class="m-2 text-sm text-slate-400 font-bold">This section uses and each block to go through an array of colors.</p>
+<p class="m-2 text-sm font-bold">This section uses and each block to go through an array of colors.</p>
 
 <hr class="border-2" />
 
-<button class="rounded-full block bg-emerald-600 px-4 py-2 my-4 mx-2" on:click={handleClick}>
+<button class="btn variant-filled-secondary my-4 mx-2" on:click={handleClick}>
 	Remove First Thing
 </button>
 
@@ -85,11 +85,11 @@
 	<Thing name={thing.name} />
 {/each}
 
-<p class="m-2 text-sm text-slate-400 font-bold">This section uses an each block to display an array of things with a key so they can be removed.</p>
+<p class="m-2 text-sm font-bold">This section uses an each block to display an array of things with a key so they can be removed.</p>
 
 <hr class="border-2" />
 
-<button class="rounded-full block bg-emerald-600 px-4 py-2 my-4 mx-2" on:click={handlePromise}>
+<button class="btn variant-filled-secondary my-4 mx-2" on:click={handlePromise}>
 	Generate Random Number
 </button>
 
@@ -98,20 +98,20 @@
 {:then number}
     <p class="m-2">The number is {number}</p>
 {:catch error}
-    <p class="text-red-600 m-2">{error.message}</p>
+    <p class="text-error-500 m-2">{error.message}</p>
 {/await}
 
-<p class="m-2 text-sm text-slate-400 font-bold">This section uses an await block to handle a promise.</p>
+<p class="m-2 text-sm font-bold">This section uses an await block to handle a promise.</p>
 
 <hr class="border-2" />
 
-<div class="flex flex-wrap bg-emerald-200 m-2 justify-center">
+<div class="flex flex-wrap bg-secondary-300 justify-center">
 	{#each twentyFiveAvatars as { lastName, avatar }}
 	<div class="flex flex-col items-center m-4">
 		<img src={avatar} alt={lastName} class="w-24 h-24 rounded-full" />
-		<p class="text-slate-800 font-bold">{lastName}</p>
+		<p class="text-surface-900 font-bold">{lastName}</p>
 	</div>
 	{/each}
 </div>
 
-<p class="m-2 text-sm text-slate-400 font-bold">This section uses an each block to iterate through an array of objects and display them.</p>
+<p class="m-2 text-sm font-bold">This section uses an each block to iterate through an array of objects and display them.</p>
