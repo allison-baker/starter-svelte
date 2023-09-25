@@ -35,7 +35,7 @@
 		const lastName = faker.person.lastName();
 		return {
 			lastName,
-			avatar: `https://api.dicebear.com/7.x/pixel-art/svg?seed=${faker.person.firstName()}`,
+			avatar: `https://avatars.dicebear.com/api/pixel-art/${lastName}.svg`,
 		}
 	})
 </script>
@@ -59,14 +59,14 @@
 
 <hr class="border-2" />
 
-<h1 style="color: {selected}" class=m-2>Pick a Color</h1>
+<h1 style="color: {selected}" class="m-2">Pick a Color</h1>
 
-<div class="m-2">
+<div class="m-2 grid grid-cols-7 gap-2 max-w-md">
     {#each colors as color, i}
 	<button
-        class="colors"
+        class="btn rounded-full hover:-translate-y-2 hover:scale-110 aria-selected:shadow-xl"
 		aria-current={selected === color}
-		aria-label=color
+		aria-label={color}
 		style="background: {color}"
 		on:click={() => (selected = color)}
 	>{i + 1}</button>
@@ -105,9 +105,9 @@
 
 <hr class="border-2" />
 
-<div class="flex flex-wrap bg-emerald-200 m-2">
+<div class="flex flex-wrap bg-emerald-200 m-2 justify-center">
 	{#each twentyFiveAvatars as { lastName, avatar }}
-	<div class="flex items-center">
+	<div class="flex flex-col items-center m-4">
 		<img src={avatar} alt={lastName} class="w-24 h-24 rounded-full" />
 		<p class="text-slate-800 font-bold">{lastName}</p>
 	</div>
@@ -115,31 +115,3 @@
 </div>
 
 <p class="m-2 text-sm text-slate-400 font-bold">This section uses an each block to iterate through an array of objects and display them.</p>
-
-<style>
-	h1 {
-		transition: color 0.2s;
-	}
-
-	div {
-		display: grid;
-		grid-template-columns: repeat(7, 1fr);
-		grid-gap: 5px;
-		max-width: 400px;
-	}
-
-	button.colors {
-		aspect-ratio: 1;
-		border-radius: 50%;
-		background: var(--color, #fff);
-		transform: translate(-2px, -2px);
-		filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
-		transition: all 0.1s;
-	}
-
-	button.colors[aria-current='true'] {
-		transform: none;
-		filter: none;
-		box-shadow: inset 3px 3px 4px rgba(0, 0, 0, 0.2);
-	}
-</style>
