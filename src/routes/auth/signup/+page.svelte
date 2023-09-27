@@ -1,15 +1,29 @@
 <script lang="ts">
-	const credentials = {
-        firstName: '',
-        lastName: '',
-        email: '',
-        password: ''
-    }
+	import { getModalStore } from '@skeletonlabs/skeleton';
+	import type { ModalSettings } from '@skeletonlabs/skeleton';
 
-    const handleSubmit = async () => {
-        alert("Thanks for submitting!")
-        console.log(credentials)
-    }
+	const credentials = {
+		firstName: '',
+		lastName: '',
+		email: '',
+		password: ''
+	};
+
+	const modalStore = getModalStore();
+
+	const handleSubmit = async () => {
+		const modal: ModalSettings = {
+			type: 'alert',
+			title: 'Welcome!',
+			body: 'Thanks for signing up! We\'re happy to have you here.'
+		};
+		modalStore.trigger(modal);
+	}
+
+	/* const handleSubmit = async () => {
+		alert('You\'ve signed up! Thanks!');
+		console.log(credentials);
+	}; */
 </script>
 
 <div class="h-full mx-auto flex justify-center items-center container">
@@ -21,45 +35,41 @@
 				autocomplete="given-name"
 				type="text"
 				placeholder="First Name"
-				class="p-2 w-1/2 rounded-md text-surface-800 bg-tertiary-200"
-                bind:value={credentials.firstName}
+				class="py-2 px-4 w-2/3 bg-tertiary-200 input"
+				bind:value={credentials.firstName}
 			/>
 			<input
 				required
 				autocomplete="family-name"
 				type="text"
 				placeholder="Last Name"
-				class="p-2 w-1/2 rounded-md text-surface-800 bg-tertiary-200"
-                bind:value={credentials.lastName}
+				class="py-2 px-4 w-2/3 bg-tertiary-200 input"
+				bind:value={credentials.lastName}
 			/>
 			<input
 				required
 				autocomplete="email"
 				type="email"
 				placeholder="Email"
-				class="p-2 w-1/2 rounded-md text-surface-800 bg-tertiary-200"
-                bind:value={credentials.email}
+				class="py-2 px-4 w-2/3 bg-tertiary-200 input"
+				bind:value={credentials.email}
 			/>
 			<input
 				required
 				autocomplete="new-password"
 				type="password"
 				placeholder="Password"
-				class="p-2 w-1/2 rounded-md text-surface-800 bg-tertiary-200"
-                bind:value={credentials.password}
+				class="py-2 px-4 w-2/3 bg-tertiary-200 input"
+				bind:value={credentials.password}
 			/>
 			<input
 				required
 				autocomplete="new-password"
 				type="password"
 				placeholder="Confirm Password"
-				class="p-2 w-1/2 rounded-md text-surface-800 bg-tertiary-200"
+				class="py-2 px-4 w-2/3 bg-tertiary-200 input"
 			/>
-			<input
-				type="submit"
-				value="Sign Up"
-				class="btn variant-filled-secondary"
-			/>
+			<input type="submit" value="Sign Up" class="btn variant-filled-secondary" />
 		</form>
 	</div>
 </div>

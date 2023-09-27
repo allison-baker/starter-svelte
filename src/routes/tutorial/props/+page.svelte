@@ -14,7 +14,9 @@
 
 <Nested answer={'42'} />
 
-<p class="m-2 text-sm font-bold">This demonstrates passing data from a parent component to a child.</p>
+<p class="m-2 text-sm font-bold">
+	This demonstrates passing data from a parent component to a child.
+</p>
 
 <hr class="border-2" />
 
@@ -26,4 +28,7 @@
 
 <PackageInfo {...pkg} />
 
-<p class="m-2 text-sm font-bold">This demonstrates spreading an array with values that matches a component's props onto a component.</p>
+<p class="m-2 text-sm font-bold">
+	This demonstrates spreading an array with values that matches a component's props onto a
+	component.
+</p>

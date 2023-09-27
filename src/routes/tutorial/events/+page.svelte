@@ -1,26 +1,26 @@
 <script lang="ts">
-	// import Inner from "$lib/components/Inner.svelte"
-	import { getModalStore } from '@skeletonlabs/skeleton'
-	import type { ModalSettings } from '@skeletonlabs/skeleton'
-	import Outer from "$lib/components/Outer.svelte"
+	// import Inner from "$lib/components/Inner.svelte";
+	import { getModalStore } from '@skeletonlabs/skeleton';
+	import type { ModalSettings } from '@skeletonlabs/skeleton';
+	import Outer from '$lib/components/Outer.svelte';
 	import BigRedButton from '$lib/components/BigRedButton.svelte';
-	
+
 	let m = { x: 0, y: 0 };
 
-	const modalStore = getModalStore()
+	const modalStore = getModalStore();
 
-    function handleMessage(event: {detail: {text: any}}) {
-        const modal: ModalSettings = {
+	function handleMessage(event: { detail: { text: any } }) {
+		const modal: ModalSettings = {
 			type: 'alert',
 			title: 'Hello!',
 			body: event.detail.text
-		}
-		modalStore.trigger(modal)
+		};
+		modalStore.trigger(modal);
 		//alert(event.detail.text)
-    }
+	}
 
 	function handleClick() {
-		alert('You clicked the big blue button!')
+		alert('You clicked the big blue button!');
 	}
 </script>
 
@@ -34,19 +34,25 @@
 >
 	<p class="text-surface-900 font-bold">The pointer is at {m.x} x {m.y}</p>
 </div>
-<p class="m-2 text-sm font-bold">This div uses the on:pointermove event handler to show your current pointer location within the div.</p>
+<p class="m-2 text-sm font-bold">
+	This div uses the on:pointermove event handler to show your current pointer location within the
+	div.
+</p>
 
 <hr class="border-2" />
 
-<button class="btn variant-filled-secondary mx-2 my-4"on:click={() => alert('clicked')}>
+<button class="btn variant-filled-secondary mx-2 my-4" on:click={() => alert('clicked')}>
 	Click Me
 </button>
 <p class="m-2 text-sm font-bold">This button demonstrates a simple on:click event handler.</p>
 
 <hr class="border-2" />
 
-<Outer on:message={handleMessage}/>
-<p class="m-2 text-sm font-bold">This button demonstrates event forwarding from an Inner component to an Outer component to this page.</p>
+<Outer on:message={handleMessage} />
+<p class="m-2 text-sm font-bold">
+	This button demonstrates event forwarding from an Inner component to an Outer component to this
+	page.
+</p>
 
 <hr class="border-2" />
 
