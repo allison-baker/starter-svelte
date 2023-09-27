@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { getModalStore } from '@skeletonlabs/skeleton';
+	import type { ModalSettings } from '@skeletonlabs/skeleton';
+
 	let count = 0;
 	$: doubled = count * 2;
 
@@ -15,8 +18,19 @@
 		console.log("wow, you're counting a lot!");
 	}
 
+	const modalStore = getModalStore();
+
+	function countAlert() {
+		const modal: ModalSettings = {
+			type: 'alert',
+			title: 'Stop it!',
+			body: "Cut it out, you've counted enough now."
+		};
+		modalStore.trigger(modal);
+	}
+
 	$: if (count >= 20) {
-		alert("quit it, you're counting too much.");
+		countAlert();
 	}
 
 	let numbers = [1, 2, 3, 4];

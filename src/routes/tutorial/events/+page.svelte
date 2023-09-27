@@ -9,6 +9,15 @@
 
 	const modalStore = getModalStore();
 
+	function handleClick() {
+		const modal: ModalSettings = {
+			type: 'alert',
+			title: 'Blue Button',
+			body: 'Thanks for helping demonstrate event forwarding!'
+		};
+		modalStore.trigger(modal);
+	}
+
 	function handleMessage(event: { detail: { text: any } }) {
 		const modal: ModalSettings = {
 			type: 'alert',
@@ -19,9 +28,9 @@
 		//alert(event.detail.text)
 	}
 
-	function handleClick() {
+	/* function handleClick() {
 		alert('You clicked the big blue button!');
-	}
+	} */
 </script>
 
 <h1 class="m-2 text-2xl">Events</h1>

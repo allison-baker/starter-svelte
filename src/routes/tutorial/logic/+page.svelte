@@ -10,7 +10,7 @@
 		count += 1;
 	}
 
-	let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple', 'pink'];
+	let colors = ['#aa4c4b', '#324f4d', '#404e5c', '#e5969c', '#b8804c', '#7d4a63', '#535050'];
 	let selected = colors[0];
 
 	let things = [
@@ -61,7 +61,7 @@
 
 <hr class="border-2" />
 
-<h1 style="color: {selected}" class="m-2">Pick a Color</h1>
+<h1 style="color: {selected}" class="m-2 text-xl font-bold">Pick a Color</h1>
 
 <div class="m-2 grid grid-cols-7 gap-2 max-w-md">
 	{#each colors as color, i}

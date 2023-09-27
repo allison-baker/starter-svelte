@@ -1,5 +1,8 @@
 <script lang="ts">
-	let name = 'world';
+	import { getModalStore } from '@skeletonlabs/skeleton';
+	import type { ModalSettings } from '@skeletonlabs/skeleton';
+
+	let name = 'Thor';
 
 	let a = 1;
 	let b = 2;
@@ -25,9 +28,29 @@
 
 	let answer = '';
 
-	function handleSubmit() {
-		alert(`answered question ${selected.id} (${selected.text}) with "${answer}"`);
+	const modalStore = getModalStore();
+
+	function handleSubscribe() {
+		const modal: ModalSettings = {
+			type: 'alert',
+			title: 'Thanks for opting in!',
+			body: 'We\'re totally not about to sell all of your personal information.'
+		};
+		modalStore.trigger(modal);
 	}
+
+	function handleSubmit() {
+		const modal: ModalSettings = {
+			type: 'alert',
+			title: 'Thanks for giving up your information!',
+			body: `You've answered question ${selected.id} (${selected.text}) with "${answer}."`
+		};
+		modalStore.trigger(modal);
+	}
+
+	/* function handleSubmit() {
+		alert(`answered question ${selected.id} (${selected.text}) with "${answer}"`);
+	} */
 </script>
 
 <h1 class="m-2 text-2xl">Bindings</h1>
@@ -81,7 +104,7 @@
 	<p class="m-2">You must opt in to continue. If you're not paying, you're the product.</p>
 {/if}
 
-<button class="btn variant-filled-secondary mx-2 my-4" disabled={!yes}>Subscribe</button>
+<button class="btn variant-filled-secondary mx-2 my-4" disabled={!yes} on:click={handleSubscribe}>Subscribe</button>
 
 <p class="m-2 text-sm font-bold">This section demonstrates using bind:checked to toggle states.</p>
 
@@ -112,3 +135,7 @@
 <p class="m-2">
 	You've selected question {selected ? selected.id : '[waiting...]'}
 </p>
+
+<p class="m-2 text-sm font-bold">This form uses bind:value with a select element.</p>
+
+<hr class="border-2" />
