@@ -206,3 +206,5 @@
 	<h2 class="text-lg my-2 text-primary-600 dark:text-primary-400 font-bold">Output</h2>
 	<div>{@html marked(value)}</div>
 </div>
+
+<p class="m-2 text-sm font-bold">This section binds a value to a textarea.</p>
