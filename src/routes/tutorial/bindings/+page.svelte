@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
+	import { marked } from 'marked';
 
 	let name = 'Thor';
 
@@ -51,6 +52,13 @@
 	/* function handleSubmit() {
 		alert(`answered question ${selected.id} (${selected.text}) with "${answer}"`);
 	} */
+
+	let scoops = 1;
+	let flavours = [];
+
+	const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
+
+	let value = `Some words are *italic*, some are **bold**\n\n- lists\n- are\n- cool`;
 </script>
 
 <h1 class="m-2 text-2xl">Bindings</h1>
@@ -139,3 +147,62 @@
 <p class="m-2 text-sm font-bold">This form uses bind:value with a select element.</p>
 
 <hr class="border-2" />
+
+<h2 class="text-lg m-2 text-primary-600 dark:text-primary-400 font-bold">Size</h2>
+
+{#each [1, 2, 3] as number}
+	<label class="mx-2">
+		<input
+			type="radio"
+			name="scoops"
+			value={number}
+			bind:group={scoops}
+		/>
+
+		{number} {number === 1 ? 'Scoop' : 'Scoops'}
+	</label>
+{/each}
+
+<h2 class="text-lg m-2 text-primary-600 dark:text-primary-400 font-bold">Flavours</h2>
+
+<!-- {#each ['Chocolate Chip Cookie Dough', 'Mint Brownie', 'Rocky Road'] as flavour}
+	<label class="mx-2">
+		<input
+			type="checkbox"
+			name="flavours"
+			value={flavour}
+			bind:group={flavours}
+		/>
+
+		{flavour}
+	</label>
+{/each} -->
+
+<select class="mx-2" multiple bind:value={flavours}>
+	{#each ['Chocolate Chip Cookie Dough', 'Mint Brownie', 'Rocky Road'] as flavour}
+		<option>{flavour}</option>
+	{/each}
+</select>
+
+{#if flavours.length === 0}
+	<p class="m-2">Please select at least one flavour.</p>
+{:else if flavours.length > scoops}
+	<p class="m-2">Can't order more flavours than scoops!</p>
+{:else}
+	<p class="m-2">
+		You ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}
+		of {formatter.format(flavours)}
+	</p>
+{/if}
+
+<p class="m-2 text-sm font-bold">This section demonstrates using bind:group for radio inputs, and bind:value with select multiple.</p>
+
+<hr class="border-2" />
+
+<div class="grid m-2 grid-rows-2 h-full gap-4 grid-cols-[5rem_1fr]">
+	<h2 class="text-lg my-2 text-primary-600 dark:text-primary-400 font-bold">Input</h2>
+	<textarea class="flex-[1] resize-none" bind:value></textarea>
+
+	<h2 class="text-lg my-2 text-primary-600 dark:text-primary-400 font-bold">Output</h2>
+	<div>{@html marked(value)}</div>
+</div>
