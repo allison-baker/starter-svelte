@@ -6,11 +6,19 @@
 @tailwind utilities;
 @tailwind variants;
 
-/* rocket theme */
 @font-face {
-	font-family: 'Space Grotesk';
-	src: url('/fonts/SpaceGrotesk.ttf');
+	font-family: 'Rubik';
+	src: url('/fonts/Rubik-VariableFont_wght.ttf'), url('/fonts/Rubik-Italic-VariableFont_wght.ttf');
 	font-display: swap;
+}
+
+
+/* NOTE: set your target theme name (ex: skeleton, wintry, modern, etc) */
+
+:root [data-theme='my-custom-theme'] {
+    --theme-font-family-base: 'Rubik', sans-serif;
+    --theme-font-family-heading: 'Rubik', sans-serif;
+    /* ... */
 }
 
 html,

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { localUser } from '$lib/stores/localUser';
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
 
@@ -6,18 +7,23 @@
 		firstName: '',
 		lastName: '',
 		email: '',
-		password: ''
 	};
+
+	let password: string;
 
 	const modalStore = getModalStore();
 
 	const handleSubmit = async () => {
 		const modal: ModalSettings = {
 			type: 'alert',
-			title: 'Welcome!',
-			body: 'Thanks for signing up! We\'re happy to have you here.'
+			title: `Thanks for signing up, ${credentials.firstName}!`,
+			body: 'Log in to continue to the site.',
 		};
+
 		modalStore.trigger(modal);
+		
+		$localUser = credentials;
+		console.log($localUser);
 	}
 
 	/* const handleSubmit = async () => {
@@ -60,7 +66,7 @@
 				type="password"
 				placeholder="Password"
 				class="py-2 px-4 w-2/3 bg-tertiary-200 input"
-				bind:value={credentials.password}
+				bind:value={password}
 			/>
 			<input
 				required
