@@ -35,7 +35,7 @@
 		const lastName = faker.person.lastName();
 		return {
 			lastName,
-			avatar: `https://avatars.dicebear.com/api/pixel-art/${lastName}.svg`
+			avatar: `https://api.dicebear.com/7.x/pixel-art-neutral/svg?seed=${lastName}`
 		};
 	});
 </script>
