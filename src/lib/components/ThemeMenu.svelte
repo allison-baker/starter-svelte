@@ -3,6 +3,7 @@
 	import { popup } from '@skeletonlabs/skeleton';
 	import type { PopupSettings } from '@skeletonlabs/skeleton';
 	import { ListBox, ListBoxItem } from '@skeletonlabs/skeleton';
+	import { LightSwitch } from '@skeletonlabs/skeleton';
 
 	const popupCombobox: PopupSettings = {
 		event: 'focus-click',
@@ -29,3 +30,4 @@
 	<div class="arrow bg-surface-100-800-token" />
 </div>
 
+<LightSwitch />
