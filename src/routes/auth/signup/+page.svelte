@@ -2,11 +2,12 @@
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
 	import { localUser } from '$lib/stores/localUser';
+	import { goto } from '$app/navigation';
 
 	const credentials = {
 		firstName: '',
 		lastName: '',
-		email: '',
+		email: ''
 	};
 
 	let password: string;
@@ -14,22 +15,22 @@
 	const modalStore = getModalStore();
 
 	const handleSubmit = async () => {
-		const modal: ModalSettings = {
-			type: 'alert',
-			title: `Thanks for signing up, ${credentials.firstName}!`,
-			body: 'Log in to continue to the site.',
-		};
-
-		modalStore.trigger(modal);
-		
 		$localUser = credentials;
-		console.log($localUser);
-	}
 
-	/* const handleSubmit = async () => {
-		alert('You\'ve signed up! Thanks!');
-		console.log(credentials);
-	}; */
+		new Promise<boolean>((resolve) => {
+			const modal: ModalSettings = {
+				type: 'confirm',
+				title: 'Thanks for signing up!',
+				body: 'Log in to continue to the site.',
+				response: (r: boolean) => {
+					resolve(r);
+				}
+			};
+			modalStore.trigger(modal);
+		}).then((r: any) => {
+			if (r) goto('../auth');
+		});
+	};
 </script>
 
 <div class="h-full mx-auto flex justify-center items-center container">

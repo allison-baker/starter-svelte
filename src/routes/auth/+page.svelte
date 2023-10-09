@@ -14,7 +14,7 @@
 		const modal: ModalSettings = {
 			type: 'alert',
 			title: 'Welcome back!',
-			body: 'Thanks for logging back in! We\'re happy to see you back.'
+			body: 'Thanks for loggin back in! We\'re happy to have you back.'
 		};
 		modalStore.trigger(modal);
 	}
@@ -51,7 +51,7 @@
 			/>
 			<input type="submit" value="Log In" class="btn variant-filled-secondary" />
 		</form>
-		<p>New to my site? Create an account instead.</p>
-		<a href="/auth/signup" class="btn variant-filled-primary mx-2 mt-4 mb-8">Sign Up</a>
+		<p class="mb-8">New to my site? <a href="/auth/signup" class="text-tertiary-500 hover:text-tertiary-400">Create an account instead.</a></p>
+		
 	</div>
 </div>

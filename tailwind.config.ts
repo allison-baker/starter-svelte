@@ -23,6 +23,12 @@ const config = {
 			themes: {
 				custom: [
 					myCustomTheme
+				],
+				preset: [ 
+					"rocket",
+					"vintage",
+					"hamlindigo",
+					"gold-nouveau",
 				]
 			}
 		})
