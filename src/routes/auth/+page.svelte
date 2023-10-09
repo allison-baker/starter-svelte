@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { localUser } from '$lib/stores/localUser';
+	import { localUser } from '$lib/stores/localUser';
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
 
@@ -14,7 +14,7 @@
 		const modal: ModalSettings = {
 			type: 'alert',
 			title: 'Welcome back!',
-			body: 'Thanks for loggin back in! We\'re happy to have you back.'
+			body: `Thanks for logging back in, ${$localUser.email}!`
 		};
 		modalStore.trigger(modal);
 	}
