@@ -1,7 +1,7 @@
 <script lang="ts">
-	import { localUser } from '$lib/stores/localUser';
 	import { getModalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings } from '@skeletonlabs/skeleton';
+	import { localUser } from '$lib/stores/localUser';
 
 	const credentials = {
 		firstName: '',

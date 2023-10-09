@@ -6,6 +6,7 @@
 	import Events from './events/+page.svelte';
 	import Bindings from './bindings/+page.svelte';
 	import Lifecycle from './lifecycle/+page.svelte';
+	import Stores from './stores/+page.svelte';
 
 	let activeRoute = 'Introduction';
 
@@ -42,6 +43,9 @@
 		<button class="btn variant-filled-primary mx-2 my-4" on:click={() => reassignRoute('Lifecycle')}
 			>Lifecycle</button
 		>
+		<button class="btn variant-filled-primary mx-2 my-4" on:click={() => reassignRoute('Stores')}
+			>Stores</button
+		>
 	</nav>
 	{#if activeRoute === 'Introduction'}
 		<Introduction />
@@ -63,5 +67,8 @@
 	{/if}
 	{#if activeRoute === 'Lifecycle'}
 		<Lifecycle />
+	{/if}
+	{#if activeRoute === 'Stores'}
+		<Stores />
 	{/if}
 </main>

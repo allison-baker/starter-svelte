@@ -178,7 +178,7 @@
 	</label>
 {/each} -->
 
-<select class="mx-2" multiple bind:value={flavours}>
+<select class="mx-2 text-surface-800 p-2 rounded-md bg-tertiary-200" multiple bind:value={flavours}>
 	{#each ['Chocolate Chip Cookie Dough', 'Mint Brownie', 'Rocky Road'] as flavour}
 		<option>{flavour}</option>
 	{/each}
@@ -201,7 +201,7 @@
 
 <div class="grid m-2 grid-rows-2 h-full gap-4 grid-cols-[5rem_1fr]">
 	<h2 class="text-lg my-2 text-primary-600 dark:text-primary-400 font-bold">Input</h2>
-	<textarea class="flex-[1] resize-none" bind:value></textarea>
+	<textarea class="flex-[1] resize-none text-surface-800 p-2 rounded-md bg-tertiary-200" bind:value></textarea>
 
 	<h2 class="text-lg my-2 text-primary-600 dark:text-primary-400 font-bold">Output</h2>
 	<div>{@html marked(value)}</div>

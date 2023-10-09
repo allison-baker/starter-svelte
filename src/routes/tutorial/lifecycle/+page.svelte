@@ -12,7 +12,7 @@
 		pokeName = pokemon.name;
 	});
 
-	let text = 'Select some text and hit the tab key to toggle to uppercase.';
+	let text = 'Select some of this text and hit the tab key to toggle between upper and lowercase.';
 
 	async function handleKeydown(this: any, event: { key: string; preventDefault: () => void }) {
 		if (event.key !== 'Tab') return;
@@ -53,7 +53,7 @@
 <textarea
 	value={text}
 	on:keydown={handleKeydown}
-	class="w-full text-center m-2 p-2 bg-secondary-300 font-bold text-lg"
+	class="text-surface-800 p-2 rounded-md bg-tertiary-200 w-2/3 m-2"
 />
 
 <p class="m-2 text-sm font-bold">
