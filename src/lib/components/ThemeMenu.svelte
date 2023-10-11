@@ -30,4 +30,4 @@
 	<div class="arrow bg-surface-100-800-token" />
 </div>
 
-<LightSwitch />
+<LightSwitch on:click/>

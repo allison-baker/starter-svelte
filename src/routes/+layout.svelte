@@ -19,6 +19,18 @@
 		arrow
 	});
 
+	import { browser } from '$app/environment';
+
+	let lightSrc = '/images/personal_logo225.png';
+	let darkSrc = '/images/personal_logo_transparent.png';
+	let imageSrc: string;
+
+	let isDarkMode = document.documentElement.classList.contains('dark');
+	$: if (browser) {
+		if (isDarkMode) imageSrc = darkSrc;
+		else imageSrc = lightSrc;
+	}
+
 	initializeStores();
 </script>
 
@@ -28,10 +40,11 @@
 	<svelte:fragment slot="header">
 		<AppBar>
 			<svelte:fragment slot="lead">
+				<img src={imageSrc} height="60" width="60" alt="personal logo" class="mr-4" />
 				<strong class="text-3xl">Al Baker</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
-				<ThemeMenu />
+				<ThemeMenu on:click={() => isDarkMode = !isDarkMode}/>
 			</svelte:fragment>
 		</AppBar>
 	</svelte:fragment>
