@@ -25,8 +25,9 @@
 	let darkSrc = '/images/personal_logo_transparent.png';
 	let imageSrc: string;
 
-	let isDarkMode = document.documentElement.classList.contains('dark');
+	let isDarkMode: boolean;
 	$: if (browser) {
+		isDarkMode = document.documentElement.classList.contains('dark');
 		if (isDarkMode) imageSrc = darkSrc;
 		else imageSrc = lightSrc;
 	}
@@ -55,17 +56,22 @@
 		>
 			<a
 				href="/"
-				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800"
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
 				>Home</a
 			>
 			<a
 				href="/tutorial"
-				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800"
-				>Tutorials</a
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
+				>Basic</a
+			>
+			<a
+				href="/advancedTutorial"
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
+				>Advanced</a
 			>
 			<a
 				href="/auth/"
-				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800"
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
 				>Log In</a
 			>
 		</div>
