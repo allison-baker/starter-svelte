@@ -52,26 +52,26 @@
 	<svelte:fragment slot="sidebarLeft">
 		<div
 			id="sidebar-left"
-			class="hidden lg:block bg-tertiary-200 dark:bg-tertiary-900 h-full w-32 pt-2"
+			class="hidden lg:block bg-tertiary-200 dark:bg-tertiary-900 h-full w-32"
 		>
 			<a
 				href="/"
-				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
-				>Home</a
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
+				>About Me</a
 			>
 			<a
 				href="/tutorial"
-				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
 				>Basic</a
 			>
 			<a
 				href="/advancedTutorial"
-				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
 				>Advanced</a
 			>
 			<a
 				href="/auth/"
-				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 my-2"
+				class="text-xl block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
 				>Log In</a
 			>
 		</div>
