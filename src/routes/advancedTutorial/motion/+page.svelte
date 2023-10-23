@@ -20,27 +20,31 @@
 
 <h1 class="m-2 text-2xl">Motion</h1>
 
-<ProgressBar
-	label="Progress Bar"
-	value={$progress}
-	max={100}
-	class="m-2 w-3/4"
-	meter="bg-success-500 dark:bg-success-400"
-	track="bg-surface-200 dark:bg-surface-400"
-	height="h-4"
-/>
+<div class="w-3/4 m-2">
+	<ProgressBar
+		label="Progress Bar"
+		value={$progress}
+		max={100}
+		class="my-2"
+		meter="bg-success-500 dark:bg-success-400"
+		track="bg-surface-200 dark:bg-surface-400"
+		height="h-4"
+	/>
 
-<button on:click={() => progress.set(0)} class="btn variant-filled-secondary my-2 ml-2">
-	0%
-</button>
+	<button on:click={() => progress.set(0)} class="btn variant-filled-secondary my-2">
+		0%
+	</button>
 
-<button on:click={() => progress.set(25)} class="btn variant-filled-secondary my-2"> 25% </button>
+	<button on:click={() => progress.set(25)} class="btn variant-filled-secondary my-2"> 25% </button>
 
-<button on:click={() => progress.set(50)} class="btn variant-filled-secondary my-2"> 50% </button>
+	<button on:click={() => progress.set(50)} class="btn variant-filled-secondary my-2"> 50% </button>
 
-<button on:click={() => progress.set(75)} class="btn variant-filled-secondary my-2"> 75% </button>
+	<button on:click={() => progress.set(75)} class="btn variant-filled-secondary my-2"> 75% </button>
 
-<button on:click={() => progress.set(100)} class="btn variant-filled-secondary my-2"> 100% </button>
+	<button on:click={() => progress.set(100)} class="btn variant-filled-secondary my-2">
+		100%
+	</button>
+</div>
 
 <p class="m-2 text-sm font-bold">
 	This section uses tweening to animate changes made to the DOM at the click of a button.
@@ -48,20 +52,8 @@
 
 <hr class="border-2" />
 
-<div class="">
-    <!-- svelte-ignore a11y-no-static-element-interactions -->
-	<svg
-		on:mousemove={(e) => {
-			coords.set({ x: e.clientX, y: e.clientY });
-		}}
-		on:mousedown={() => size.set(30)}
-		on:mouseup={() => size.set(10)}
-		class="w-full h-full absolute left-0 top-0"
-	>
-		<circle cx={$coords.x} cy={$coords.y} r={$size} fill="#663363" />
-	</svg>
-
-	<div class="relative top-4 left-2 w-[200px] select-none">
+<div class="flex m-2">
+	<div class="w-[200px] select-none">
 		<label>
 			<h3>stiffness ({coords.stiffness})</h3>
 			<input
@@ -86,7 +78,25 @@
 			/>
 		</label>
 	</div>
-    <p class="m-2 my-8 text-sm font-bold">
-        This section uses spring to change the damping and stiffness of an SVG.
-    </p>
+
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<svg
+		on:mousemove={(e) => {
+			const { left, top, width, height } = e.currentTarget.getBoundingClientRect();
+			coords.set({
+				x: e.clientX - left,
+				y: e.clientY - top
+			});
+			//coords.set({ x: e.clientX, y: e.clientY });
+		}}
+		on:mousedown={() => size.set(30)}
+		on:mouseup={() => size.set(10)}
+		class="w-full h-128 border-2 border-tertiary-400 rounded-md ml-2"
+	>
+		<circle cx={$coords.x} cy={$coords.y} r={$size} fill="#663363" />
+	</svg>
 </div>
+
+<p class="m-2 text-sm font-bold">
+	This section uses spring to change the damping and stiffness of an SVG.
+</p>
