@@ -1,48 +1,18 @@
 <script lang="ts">
-	import Motion from '../advancedTutorial/motion/+page.svelte';
-	import Transitions from '../advancedTutorial/transitions/+page.svelte';
-	import Animations from '../advancedTutorial/animations/+page.svelte';
-	import Actions from '../advancedTutorial/actions/+page.svelte';
-
-	let activeRoute = 'Motion';
-
-	function reassignRoute(newRoute: string) {
-		activeRoute = newRoute;
-	}
+	let name = 'Advanced Svelte Tutorials';
+	let gifName = 'cat';
+	let src = 'https://media.giphy.com/media/xUA7b68hKy839wiVJC/giphy.gif';
 </script>
 
-<main>
-	<header>
-		<h1 class="m-2 mt-4 text-2xl">Advanced Svelte Tutorials</h1>
-	</header>
-	<nav class="mx-2 my-4">
-		<button
-			class="btn variant-filled-primary"
-			on:click={() => reassignRoute('Motion')}>Motion</button
-		>
-		<button
-			class="btn variant-filled-primary"
-			on:click={() => reassignRoute('Transitions')}>Transitions</button
-		>
-		<button
-			class="btn variant-filled-primary"
-			on:click={() => reassignRoute('Animations')}>Animations</button
-		>
-		<button
-			class="btn variant-filled-primary"
-			on:click={() => reassignRoute('Actions')}>Actions</button
-		>
-	</nav>
-	{#if activeRoute === 'Motion'}
-		<Motion />
-	{/if}
-	{#if activeRoute === 'Transitions'}
-		<Transitions />
-	{/if}
-	{#if activeRoute === 'Animations'}
-		<Animations />
-	{/if}
-	{#if activeRoute === 'Actions'}
-		<Actions />
-	{/if}
-</main>
+<h1 class="text-2xl m-4 text-secondary-600 dark:text-secondary-300 font-bold">
+	Welcome to my {name.toUpperCase()} Introduction page!
+</h1>
+
+<img {src} alt="animated {gifName}.gif" class="m-4 rounded" />
+
+<p class="mx-4 my-2">We're going to take some deep dives into some real funky, real fresh aspects of Svelte. Buckle up!</p>
+
+<p class="text-sm font-bold m-4">
+	Don't worry, I'm still using these lines throughout the application to let you know what's going on!
+</p>
+

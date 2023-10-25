@@ -12,7 +12,7 @@
 
 <p class="mx-4 my-2">I put this cat gif in here by assigning some attributes in the image tag to variables in my script tag!</p>
 
-<p class="text-sm font-bold mx-4 my-2">
+<p class="text-sm font-bold m-4">
 	Look out for these lines throughout the application! They will tell you what each tutorial is
 	demonstrating.
 </p>

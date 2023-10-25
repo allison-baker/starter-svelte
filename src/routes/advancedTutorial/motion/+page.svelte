@@ -18,9 +18,9 @@
 	let size = spring(10);
 </script>
 
-<h1 class="m-2 text-2xl">Motion</h1>
+<h1 class="m-4 text-2xl">Motion</h1>
 
-<div class="w-3/4 m-2">
+<div class="w-3/4 mx-4 my-2">
 	<ProgressBar
 		label="Progress Bar"
 		value={$progress}
@@ -46,13 +46,13 @@
 	</button>
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section uses tweening to animate changes made to the DOM at the click of a button.
 </p>
 
 <hr class="border-2" />
 
-<div class="flex m-2">
+<div class="flex mx-4 my-2 py-2">
 	<div class="w-[200px] select-none">
 		<label>
 			<h3>stiffness ({coords.stiffness})</h3>
@@ -97,6 +97,6 @@
 	</svg>
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section uses spring to change the damping and stiffness of an SVG.
 </p>

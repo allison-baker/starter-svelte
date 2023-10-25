@@ -2,4 +2,4 @@
     
 </script>
 
-<h1 class="m-2 text-2xl">Actions</h1>
+<h1 class="m-4 text-2xl">Actions</h1>

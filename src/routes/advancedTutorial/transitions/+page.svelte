@@ -28,9 +28,9 @@
 	});
 </script>
 
-<h1 class="m-2 text-2xl">Transitions</h1>
+<h1 class="m-4 text-2xl">Transitions & Animation</h1>
 
-<div class="m-2">
+<div class="mx-4 my-2">
 	<label>
 		<input type="checkbox" bind:checked={visible} /> Fade Me
 	</label>
@@ -45,13 +45,13 @@
 	{/if}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This checkbox uses the Svelte fade transition to show and hide an image.
 </p>
 
 <hr class="border-2" />
 
-<div class="m-2">
+<div class="mx-4 my-2">
 	<label>
 		<input type="checkbox" bind:checked={visible2} /> Fly Me
 	</label>
@@ -71,14 +71,14 @@
 	{/if}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This checkbox uses the Svelte fly transition to show and hide an paragraph tag, and transition
 	events to know when the transition starts and ends.
 </p>
 
 <hr class="border-2" />
 
-<div class="m-2">
+<div class="mx-4 my-2">
 	<label>
 		<input type="checkbox" bind:checked={visible3} /> Fade Me In, Fly Me Out
 	</label>
@@ -88,13 +88,13 @@
 	{/if}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	The 'in' and 'out' directives can specify different transitions in or out.
 </p>
 
 <hr class="border-2" />
 
-<div class="m-2">
+<div class="mx-4 my-2">
 	<label>
 		<input type="checkbox" bind:checked={visible4} />
 		Typewriter Effect
@@ -105,13 +105,13 @@
 	{/if}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This checkbox uses a custom JS transition to create a typewriter effect.
 </p>
 
 <hr class="border-2" />
 
-<div class="m-2">
+<div class="mx-4 my-2">
 	<label>
 		<input type="checkbox" bind:checked={showItems} /> Show List
 	</label>
@@ -129,14 +129,14 @@
 	{/if}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section uses the global transition to play the slide transition when the slider is moved OR
 	when the checkbox is toggled.
 </p>
 
 <hr class="border-2" />
 
-<div class="m-2">
+<div class="mx-4 my-2">
 	<h2 class="text-lg text-primary-500 dark:text-primary-200">loading...</h2>
 
 	{#key j}
@@ -146,6 +146,6 @@
 	{/key}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section uses a key block to destroy and recreate content every time the message changes.
 </p>

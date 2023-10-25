@@ -70,7 +70,7 @@
 				>Advanced</a
 			>
 			<a
-				href="/auth/"
+				href="/auth"
 				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
 				>Log In</a
 			>
