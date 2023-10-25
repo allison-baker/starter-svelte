@@ -8,7 +8,7 @@
 	Welcome to my {name.toUpperCase()} Introduction page!
 </h1>
 
-<img {src} alt="animated {gifName}.gif" class="mx-4 my-2 rounded" />
+<img {src} alt="animated {gifName}.gif" class="m-4 rounded" />
 
 <p class="mx-4 my-2">I put this cat gif in here by assigning some attributes in the image tag to variables in my script tag!</p>
 

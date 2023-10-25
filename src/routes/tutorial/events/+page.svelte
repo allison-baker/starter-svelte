@@ -33,7 +33,7 @@
 	} */
 </script>
 
-<h1 class="mx-4 my-2 text-2xl">Events</h1>
+<h1 class="mx-4 mt-2 mb-4 text-2xl">Events</h1>
 
 <div
 	class="left-0 top-0 w-full h-96 p-4 bg-secondary-300"
