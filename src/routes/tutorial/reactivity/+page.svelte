@@ -42,27 +42,27 @@
 	$: sum = numbers.reduce((total, currentNumber) => total + currentNumber, 0);
 </script>
 
-<h1 class="text-2xl m-2">Reactivity</h1>
+<h1 class="text-2xl mx-4 my-2">Reactivity</h1>
 
-<div class="m-2">
-	<button class="btn variant-filled-secondary my-4" on:click={increment}>
+<div class="mx-4 my-2">
+	<button class="btn variant-filled-secondary my-2" on:click={increment}>
 		Clicked {count}
 		{count === 1 ? 'time' : 'times'}
 	</button>
 
 	<p>{count} doubled is {doubled}</p>
-	<button class="btn variant-filled-secondary my-4" on:click={reset}> Reset Count </button>
+	<button class="btn variant-filled-secondary my-2" on:click={reset}> Reset Count </button>
 </div>
 
-<p class="m-2 text-sm font-bold">This section demonstrates reactive values.</p>
+<p class="m-4 text-sm font-bold">This section demonstrates reactive values.</p>
 
 <hr class="border-2" />
 
-<div class="m-2">
+<div class="mx-4 my-2">
 	<p>{numbers.join(' + ')} = {sum}</p>
-	<button class="btn variant-filled-secondary my-4" on:click={addNumber}>Add a Number</button>
+	<button class="btn variant-filled-secondary my-2" on:click={addNumber}>Add a Number</button>
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section demonstrates grouping reactive statements together with a block.
 </p>

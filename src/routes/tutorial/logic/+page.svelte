@@ -40,30 +40,30 @@
 	});
 </script>
 
-<h1 class="m-2 text-2xl">Logic</h1>
+<h1 class="mx-4 my-2 text-2xl">Logic</h1>
 
-<button class="btn variant-filled-secondary mx-2 my-4" on:click={increment}>
+<button class="btn variant-filled-secondary mx-4 my-2" on:click={increment}>
 	Clicked {count}
 	{count === 1 ? 'Time' : 'Times'}
 </button>
 
 {#if count >= 10}
-	<p class="m-2">{count} is greater than or equal to 10</p>
+	<p class="mx-4 my-2">{count} is greater than or equal to 10</p>
 {:else if count < 5}
-	<p class="m-2">{count} is between 0 and 5</p>
+	<p class="mx-4 my-2">{count} is between 0 and 5</p>
 {:else}
-	<p class="m-2">{count} is between 5 and 10</p>
+	<p class="mx-4 my-2">{count} is between 5 and 10</p>
 {/if}
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This button uses if and else if statements to show where count is between 0, 5, and 10.
 </p>
 
 <hr class="border-2" />
 
-<h1 style="color: {selected}" class="m-2 text-xl font-bold">Pick a Color</h1>
+<h1 style="color: {selected}" class="mx-4 my-2 text-xl font-bold">Pick a Color</h1>
 
-<div class="m-2 grid grid-cols-7 gap-2 max-w-md">
+<div class="mx-4 my-2 grid grid-cols-7 gap-2 max-w-md">
 	{#each colors as color, i}
 		<button
 			class="btn rounded-full hover:-translate-y-2 hover:scale-110 aria-selected:shadow-xl"
@@ -75,13 +75,13 @@
 	{/each}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section uses and each block to go through an array of colors.
 </p>
 
 <hr class="border-2" />
 
-<button class="btn variant-filled-secondary my-4 mx-2" on:click={handleClick}>
+<button class="btn variant-filled-secondary m-4" on:click={handleClick}>
 	Remove First Thing
 </button>
 
@@ -89,25 +89,25 @@
 	<Thing name={thing.name} />
 {/each}
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section uses an each block to display an array of things with a key so they can be removed.
 </p>
 
 <hr class="border-2" />
 
-<button class="btn variant-filled-secondary my-4 mx-2" on:click={handlePromise}>
+<button class="btn variant-filled-secondary m-4" on:click={handlePromise}>
 	Generate Random Number
 </button>
 
 {#await promise}
-	<div class="m-2"><ProgressRadial value={undefined} /></div>
+	<div class="mx-4 my-2"><ProgressRadial value={undefined} /></div>
 {:then number}
-	<p class="m-2">The number is {number}</p>
+	<p class="mx-4 my-2">The number is {number}</p>
 {:catch error}
-	<p class="text-error-500 m-2">{error.message}</p>
+	<p class="text-error-500 mx-4 my-2">{error.message}</p>
 {/await}
 
-<p class="m-2 text-sm font-bold">This section uses an await block to handle a promise.</p>
+<p class="m-4 text-sm font-bold">This section uses an await block to handle a promise.</p>
 
 <hr class="border-2" />
 
@@ -120,6 +120,6 @@
 	{/each}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section uses an each block to iterate through an array of objects and display them.
 </p>

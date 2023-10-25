@@ -17,9 +17,9 @@
 
 <main>
 	<header>
-		<h1 class="m-2 mt-4 text-2xl">Svelte Tutorials</h1>
+		<h1 class="mx-4 my-2 mt-4 text-2xl">Svelte Tutorials</h1>
 	</header>
-	<nav class="mx-2 my-4">
+	<nav class="m-4">
 		<button class="btn variant-filled-primary" on:click={() => reassignRoute('Introduction')}
 			>Introduction</button
 		>

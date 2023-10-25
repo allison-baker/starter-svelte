@@ -61,17 +61,17 @@
 	let value = `Some words are *italic*, some are **bold**\n\n- lists\n- are\n- cool`;
 </script>
 
-<h1 class="m-2 text-2xl">Bindings</h1>
+<h1 class="mx-4 my-2 text-2xl">Bindings</h1>
 
-<input class="m-2 text-surface-800 p-2 rounded-md bg-tertiary-200" bind:value={name} />
+<input class="mx-4 my-2 text-surface-800 p-2 rounded-md bg-tertiary-200" bind:value={name} />
 
-<p class="m-2">Hello {name}!</p>
+<p class="mx-4 my-2">Hello {name}!</p>
 
-<p class="m-2 text-sm font-bold">This section demonstrates binding an input value to a variable.</p>
+<p class="m-4 text-sm font-bold">This section demonstrates binding an input value to a variable.</p>
 
 <hr class="border-2" />
 
-<label class="block m-2">
+<label class="block mx-4 my-2">
 	<input
 		class="text-surface-800 my-2 p-2 rounded-md bg-tertiary-200"
 		type="number"
@@ -82,7 +82,7 @@
 	<input class="text-surface-800 my-2" type="range" bind:value={a} min="0" max="10" />
 </label>
 
-<label class="block m-2">
+<label class="block mx-4 my-2">
 	<input
 		class="text-surface-800 my-2 p-2 rounded-md bg-tertiary-200"
 		type="number"
@@ -93,34 +93,34 @@
 	<input class="text-surface-800 my-2" type="range" bind:value={b} min="0" max="10" />
 </label>
 
-<p class="m-2">{a} + {b} = {a + b}</p>
+<p class="mx-4 my-2">{a} + {b} = {a + b}</p>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section demonstrates binding input types number and range to variables.
 </p>
 
 <hr class="border-2" />
 
-<label class="m-2">
+<label class="mx-4 my-2">
 	<input class="my-2" type="checkbox" bind:checked={yes} />
 	Yes! Send me regular email spam
 </label>
 
 {#if yes}
-	<p class="m-2">Thank you. We will bombard your inbox and sell your personal details.</p>
+	<p class="mx-4 my-2">Thank you. We will bombard your inbox and sell your personal details.</p>
 {:else}
-	<p class="m-2">You must opt in to continue. If you're not paying, you're the product.</p>
+	<p class="mx-4 my-2">You must opt in to continue. If you're not paying, you're the product.</p>
 {/if}
 
-<button class="btn variant-filled-secondary mx-2 my-4" disabled={!yes} on:click={handleSubscribe}>Subscribe</button>
+<button class="btn variant-filled-secondary mx-4 my-2" disabled={!yes} on:click={handleSubscribe}>Subscribe</button>
 
-<p class="m-2 text-sm font-bold">This section demonstrates using bind:checked to toggle states.</p>
+<p class="m-4 text-sm font-bold">This section demonstrates using bind:checked to toggle states.</p>
 
 <hr class="border-2" />
 
-<h2 class="text-lg m-2 text-primary-600 dark:text-primary-400 font-bold">Insecurity Questions</h2>
+<h2 class="text-lg mx-4 my-2 text-primary-600 dark:text-primary-400 font-bold">Insecurity Questions</h2>
 
-<form class="mx-2" on:submit|preventDefault={handleSubmit}>
+<form class="mx-4" on:submit|preventDefault={handleSubmit}>
 	<select
 		class="text-surface-800 p-2 rounded-md bg-tertiary-200"
 		bind:value={selected}
@@ -135,20 +135,20 @@
 
 	<input class="text-surface-800 p-2 rounded-md bg-tertiary-200" bind:value={answer} />
 
-	<button class="btn variant-filled-secondary mx-2 my-4" disabled={!answer} type="submit">
+	<button class="btn variant-filled-secondary m-2" disabled={!answer} type="submit">
 		Submit
 	</button>
 </form>
 
-<p class="m-2">
+<p class="mx-4 my-2">
 	You've selected question {selected ? selected.id : '[waiting...]'}
 </p>
 
-<p class="m-2 text-sm font-bold">This form uses bind:value with a select element.</p>
+<p class="m-4 text-sm font-bold">This form uses bind:value with a select element.</p>
 
 <hr class="border-2" />
 
-<h2 class="text-lg m-2 text-primary-600 dark:text-primary-400 font-bold">Size</h2>
+<h2 class="text-lg mx-4 my-2 text-primary-600 dark:text-primary-400 font-bold">Size</h2>
 
 {#each [1, 2, 3] as number}
 	<label class="mx-2">
@@ -163,7 +163,7 @@
 	</label>
 {/each}
 
-<h2 class="text-lg m-2 text-primary-600 dark:text-primary-400 font-bold">Flavours</h2>
+<h2 class="text-lg mx-4 my-2 text-primary-600 dark:text-primary-400 font-bold">Flavours</h2>
 
 <!-- {#each ['Chocolate Chip Cookie Dough', 'Mint Brownie', 'Rocky Road'] as flavour}
 	<label class="mx-2">
@@ -185,26 +185,26 @@
 </select>
 
 {#if flavours.length === 0}
-	<p class="m-2">Please select at least one flavour.</p>
+	<p class="mx-4 my-2">Please select at least one flavour.</p>
 {:else if flavours.length > scoops}
-	<p class="m-2">Can't order more flavours than scoops!</p>
+	<p class="mx-4 my-2">Can't order more flavours than scoops!</p>
 {:else}
-	<p class="m-2">
+	<p class="mx-4 my-2">
 		You ordered {scoops} {scoops === 1 ? 'scoop' : 'scoops'}
 		of {formatter.format(flavours)}
 	</p>
 {/if}
 
-<p class="m-2 text-sm font-bold">This section demonstrates using bind:group for radio inputs, and bind:value with select multiple.</p>
+<p class="m-4 text-sm font-bold">This section demonstrates using bind:group for radio inputs, and bind:value with select multiple.</p>
 
 <hr class="border-2" />
 
-<div class="grid m-2 grid-rows-2 h-full gap-4 grid-cols-[5rem_1fr]">
-	<h2 class="text-lg my-2 text-primary-600 dark:text-primary-400 font-bold">Input</h2>
+<div class="grid m-4 grid-rows-2 h-full gap-4 grid-cols-[5rem_1fr]">
+	<h2 class="text-lg text-primary-600 dark:text-primary-400 font-bold">Input</h2>
 	<textarea class="flex-[1] resize-none text-surface-800 p-2 rounded-md bg-tertiary-200" bind:value></textarea>
 
-	<h2 class="text-lg my-2 text-primary-600 dark:text-primary-400 font-bold">Output</h2>
+	<h2 class="text-lg text-primary-600 dark:text-primary-400 font-bold">Output</h2>
 	<div>{@html marked(value)}</div>
 </div>
 
-<p class="m-2 text-sm font-bold">This section binds a value to a textarea.</p>
+<p class="m-4 text-sm font-bold">This section binds a value to a textarea.</p>

@@ -10,6 +10,6 @@
 	}
 </script>
 
-<button class="btn variant-filled-secondary mx-2 my-4" on:click={sayHello}>
+<button class="btn variant-filled-secondary mx-4 mt-4" on:click={sayHello}>
 	Click for Message
 </button>

@@ -33,7 +33,7 @@
 	} */
 </script>
 
-<h1 class="m-2 text-2xl">Events</h1>
+<h1 class="mx-4 my-2 text-2xl">Events</h1>
 
 <div
 	class="left-0 top-0 w-full h-96 p-4 bg-secondary-300"
@@ -43,22 +43,22 @@
 >
 	<p class="text-surface-900 font-bold">The pointer is at {m.x} x {m.y}</p>
 </div>
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This div uses the on:pointermove event handler to show your current pointer location within the
 	div.
 </p>
 
 <hr class="border-2" />
 
-<button class="btn variant-filled-secondary mx-2 my-4" on:click={() => alert('clicked')}>
+<button class="btn variant-filled-secondary mx-4 mt-4" on:click={() => alert('clicked')}>
 	Click Me
 </button>
-<p class="m-2 text-sm font-bold">This button demonstrates a simple on:click event handler.</p>
+<p class="m-4 text-sm font-bold">This button demonstrates a simple on:click event handler.</p>
 
 <hr class="border-2" />
 
 <Outer on:message={handleMessage} />
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This button demonstrates event forwarding from an Inner component to an Outer component to this
 	page.
 </p>
@@ -66,4 +66,4 @@
 <hr class="border-2" />
 
 <BigRedButton on:click={handleClick} />
-<p class="m-2 text-sm font-bold">This button forwards an on:click event from another component.</p>
+<p class="m-4 text-sm font-bold">This button forwards an on:click event from another component.</p>

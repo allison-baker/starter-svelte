@@ -32,8 +32,9 @@
 	}
 </script>
 
-<h1 class="m-2 text-2xl">Lifecycle</h1>
-<div class="flex flex-col justify-center items-center">
+<h1 class="mx-4 my-2 text-2xl">Lifecycle</h1>
+
+<div class="flex flex-col justify-center items-center mb-4">
 	{#if pokeImg}
 		<img src={pokeImg} alt={pokeName} class="h-96 w-96" />
 		<p class="font-bold text-white text-lg bg-secondary-500 rounded-md w-96 text-center py-2">
@@ -44,7 +45,7 @@
 	{/if}
 </div>
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This section shows a new Pokemon every time the document loads (onMount).
 </p>
 
@@ -53,10 +54,10 @@
 <textarea
 	value={text}
 	on:keydown={handleKeydown}
-	class="text-surface-800 p-2 rounded-md bg-tertiary-200 w-2/3 m-2"
+	class="text-surface-800 p-2 rounded-md bg-tertiary-200 w-2/3 mx-4 mt-4"
 />
 
-<p class="m-2 text-sm font-bold">
+<p class="m-4 text-sm font-bold">
 	This textarea allows you to toggle the selection between upper and lower case by hitting the tab
 	key.
 </p>

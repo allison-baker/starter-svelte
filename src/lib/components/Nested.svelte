@@ -7,4 +7,4 @@
 	<p class="text-white">{@html string}</p>
 </div> -->
 
-<p class="m-2">The answer is {answer}</p>
+<p class="mx-4 my-2">The answer is {answer}</p>
