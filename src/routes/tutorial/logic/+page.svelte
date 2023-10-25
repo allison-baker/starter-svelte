@@ -40,7 +40,7 @@
 	});
 </script>
 
-<h1 class="mx-4 my-2 text-2xl">Logic</h1>
+<h1 class="m-4 text-2xl">Logic</h1>
 
 <button class="btn variant-filled-secondary mx-4 my-2" on:click={increment}>
 	Clicked {count}

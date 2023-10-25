@@ -10,7 +10,7 @@
 	};
 </script>
 
-<h1 class="mx-4 my-2 text-2xl">Props</h1>
+<h1 class="m-4 text-2xl">Props</h1>
 
 <Nested answer={'42'} />
 

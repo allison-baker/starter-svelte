@@ -42,7 +42,7 @@
 	$: sum = numbers.reduce((total, currentNumber) => total + currentNumber, 0);
 </script>
 
-<h1 class="text-2xl mx-4 my-2">Reactivity</h1>
+<h1 class="text-2xl m-4">Reactivity</h1>
 
 <div class="mx-4 my-2">
 	<button class="btn variant-filled-secondary my-2" on:click={increment}>

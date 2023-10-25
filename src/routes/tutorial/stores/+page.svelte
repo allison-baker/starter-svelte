@@ -15,7 +15,7 @@
 	});
 </script>
 
-<h1 class="text-2xl mx-4 my-2">Stores</h1>
+<h1 class="text-2xl m-4">Stores</h1>
 
 <div class="mx-4 my-2">
 	<p class="my-2">The count is {$count}</p>

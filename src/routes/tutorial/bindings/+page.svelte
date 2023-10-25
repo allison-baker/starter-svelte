@@ -61,7 +61,7 @@
 	let value = `Some words are *italic*, some are **bold**\n\n- lists\n- are\n- cool`;
 </script>
 
-<h1 class="mx-4 my-2 text-2xl">Bindings</h1>
+<h1 class="m-4 text-2xl">Bindings</h1>
 
 <input class="mx-4 my-2 text-surface-800 p-2 rounded-md bg-tertiary-200" bind:value={name} />
 

@@ -32,7 +32,7 @@
 	}
 </script>
 
-<h1 class="mx-4 my-2 text-2xl">Lifecycle</h1>
+<h1 class="m-4 text-2xl">Lifecycle</h1>
 
 <div class="flex flex-col justify-center items-center mb-4">
 	{#if pokeImg}
