@@ -16,7 +16,7 @@
 		>Motion</TabAnchor
 	>
 	<TabAnchor href="/advancedTutorial/transitions" selected={$page.url.pathname === '/advancedTutorial/transitions'}
-		>Transitions & Animation</TabAnchor
+		>Transitions</TabAnchor
 	>
 	<TabAnchor href="/advancedTutorial/actions" selected={$page.url.pathname === '/advancedTutorial/actions'}
 		>Actions</TabAnchor

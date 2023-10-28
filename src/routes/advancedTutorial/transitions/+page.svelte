@@ -147,5 +147,5 @@
 </div>
 
 <p class="m-4 text-sm font-bold">
-	This section uses a key block to destroy and recreate content every time the message changes.
+	This section uses a key block to destroy and recreate content every time the message changes, as well as the custom typewriter transition to display the message.
 </p>
