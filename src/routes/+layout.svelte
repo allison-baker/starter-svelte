@@ -55,8 +55,8 @@
 	<svelte:fragment slot="header">
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<img src={imageSrc} height="60" width="60" alt="personal logo" class="mr-4" />
-				<strong class="text-3xl">Al Baker</strong>
+				<img src={imageSrc} height="60" width="60" alt="personal logo" class="mr-4" style="view-transition-name: logo;"/>
+				<strong class="text-3xl" style="view-transition-name: name;">Al Baker</strong>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<ThemeMenu on:click={() => (isDarkMode = !isDarkMode)} />
@@ -94,39 +94,3 @@
 	</svelte:fragment>
 	<slot />
 </AppShell>
-
-<style>
-	@keyframes fade-in {
-		from {
-			opacity: 0;
-		}
-	}
-
-	@keyframes fade-out {
-		to {
-			opacity: 0;
-		}
-	}
-
-	@keyframes slide-from-right {
-		from {
-			transform: translateX(30px);
-		}
-	}
-
-	@keyframes slide-to-left {
-		to {
-			transform: translateX(-30px);
-		}
-	}
-
-	:root::view-transition-old(root) {
-		animation: 90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
-	}
-
-	:root::view-transition-new(root) {
-		animation: 210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
-	}
-</style>
