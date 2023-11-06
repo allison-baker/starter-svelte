@@ -65,11 +65,11 @@
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<div id="sidebar-left" class="hidden lg:block bg-tertiary-200 dark:bg-tertiary-900 h-full w-32" style="view-transition-name: sideBar;">
-			<!-- <a
+			<a
 				href="/"
 				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
 				>About Me</a
-			> -->
+			>
 			<a
 				href="/tutorial"
 				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
