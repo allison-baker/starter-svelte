@@ -2,6 +2,13 @@
 	import '../../app.postcss';
 	import { page } from '$app/stores';
 	import { TabGroup, TabAnchor } from '@skeletonlabs/skeleton';
+
+	let loggedIn = false;
+	if ($page.data.session?.user) {
+		loggedIn = true;
+	} else {
+		loggedIn = false;
+	}
 </script>
 
 <div style="view-transition-name: topNavigation;">
@@ -11,6 +18,7 @@
 		rounded="rounded-none"
 		hover="hover:variant-soft-primary"
 		active="variant-soft-primary"
+		justify="justify-center"
 	>
 		<TabAnchor href="/tutorial" selected={$page.url.pathname === '/tutorial'}
 			>Introduction</TabAnchor
@@ -39,4 +47,9 @@
 	</TabGroup>
 </div>
 
-<slot />
+<body class="bg-surface-100-800-token">
+	<main class="max-w-[1200px] mx-auto bg-surface-50-900-token p-4 h-full">
+		<slot />
+	</main>
+</body>
+

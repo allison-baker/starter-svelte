@@ -20,7 +20,7 @@
 			response: (r: boolean) => {
 				if (r) {
 					signOut();
-					goto('/auth/login');
+					goto('/');
 				}
 			}
 		};

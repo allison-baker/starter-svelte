@@ -11,6 +11,7 @@
 		rounded="rounded-none"
 		hover="hover:variant-soft-primary"
 		active="variant-soft-primary"
+		justify="justify-center"
 	>
 		<TabAnchor href="/advancedTutorial/" selected={$page.url.pathname === '/advancedTutorial'}
 			>Intro.</TabAnchor
@@ -60,4 +61,8 @@
 	</TabGroup>
 </div>
 
-<slot />
+<body class="bg-surface-100-800-token">
+	<main class="max-w-[1200px] mx-auto bg-surface-50-900-token p-4 h-full">
+		<slot />
+	</main>
+</body>

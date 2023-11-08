@@ -47,7 +47,7 @@
 <h1 class="m-4 text-2xl">Events</h1>
 
 <div
-	class="left-0 top-0 w-full h-96 p-4 bg-secondary-300"
+	class="left-0 top-0 h-96 p-4 bg-secondary-300 mx-4"
 	on:pointermove={(e) => {
 		m = { x: Math.floor(e.clientX), y: Math.floor(e.clientY) };
 	}}
