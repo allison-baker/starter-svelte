@@ -7,6 +7,8 @@
 	import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
 
 	import ThemeMenu from '$lib/components/ThemeMenu.svelte';
+	import SideNav from '$lib/navigation/SideNav.svelte';
+	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
 
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
@@ -47,16 +49,37 @@
 	}
 
 	initializeStores();
+
+	const drawerStore = getDrawerStore();
+
+	function drawerOpen(): void {
+		drawerStore.open({});
+	}
 </script>
 
 <Modal />
 
-<AppShell>
+<Drawer>
+	<SideNav />
+</Drawer>
+
+<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-56">
 	<svelte:fragment slot="header">
 		<AppBar>
 			<svelte:fragment slot="lead">
-				<img src={imageSrc} height="60" width="60" alt="personal logo" class="mr-4" style="view-transition-name: logo;"/>
-				<strong class="text-3xl" style="view-transition-name: name;">Al Baker</strong>
+				<div class="flex flex-row items-center" style="view-transition-name: name;">
+					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+						<span>
+							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
+								<rect width="100" height="20" />
+								<rect y="30" width="100" height="20" />
+								<rect y="60" width="100" height="20" />
+							</svg>
+						</span>
+					</button>
+					<img src={imageSrc} height="60" width="60" alt="personal logo" class="mr-4" />
+					<strong class="text-3xl">Al Baker</strong>
+				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
 				<ThemeMenu on:click={() => (isDarkMode = !isDarkMode)} />
@@ -64,7 +87,8 @@
 		</AppBar>
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
-		<div id="sidebar-left" class="hidden lg:block bg-tertiary-200 dark:bg-tertiary-900 h-full w-32" style="view-transition-name: sideBar;">
+		<SideNav />
+		<!-- <div id="sidebar-left" class="hidden lg:block bg-tertiary-200 dark:bg-tertiary-900 h-full w-32" style="view-transition-name: sideBar;">
 			<a
 				href="/"
 				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
@@ -90,7 +114,7 @@
 				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
 				>User</a
 			>
-		</div>
+		</div> -->
 	</svelte:fragment>
 	<slot />
 </AppShell>
