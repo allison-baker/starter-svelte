@@ -1,20 +1,15 @@
 <script lang="ts">
 	import { AppShell, AppBar } from '@skeletonlabs/skeleton';
 	import '../app.postcss';
-
 	import { initializeStores } from '@skeletonlabs/skeleton';
 	import { Modal, getModalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
-
 	import ThemeMenu from '$lib/components/ThemeMenu.svelte';
 	import SideNav from '$lib/navigation/SideNav.svelte';
 	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
-
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
 	import { storePopup } from '@skeletonlabs/skeleton';
-
 	import { onNavigate } from '$app/navigation';
-
 	import { browser } from '$app/environment';
 
 	onNavigate((navigation) => {
@@ -59,16 +54,16 @@
 
 <Modal />
 
-<Drawer>
+<Drawer width="w-56">
 	<SideNav />
 </Drawer>
 
-<AppShell slotSidebarLeft="bg-surface-500/5 w-0 lg:w-56">
+<AppShell slotSidebarLeft="bg-surface-500/5 w-0">
 	<svelte:fragment slot="header">
 		<AppBar>
 			<svelte:fragment slot="lead">
 				<div class="flex flex-row items-center" style="view-transition-name: name;">
-					<button class="lg:hidden btn btn-sm mr-4" on:click={drawerOpen}>
+					<button class="btn btn-sm mr-4" on:click={drawerOpen}>
 						<span>
 							<svg viewBox="0 0 100 80" class="fill-token w-4 h-4">
 								<rect width="100" height="20" />
@@ -88,33 +83,6 @@
 	</svelte:fragment>
 	<svelte:fragment slot="sidebarLeft">
 		<SideNav />
-		<!-- <div id="sidebar-left" class="hidden lg:block bg-tertiary-200 dark:bg-tertiary-900 h-full w-32" style="view-transition-name: sideBar;">
-			<a
-				href="/"
-				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
-				>About Me</a
-			>
-			<a
-				href="/tutorial"
-				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
-				>Basic</a
-			>
-			<a
-				href="/advancedTutorial"
-				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
-				>Advanced</a
-			>
-			<a
-				href="/todo"
-				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
-				>Todos</a
-			>
-			<a
-				href="/auth"
-				class="block p-2 hover:font-bold hover:bg-tertiary-300 dark:hover:bg-tertiary-800 py-4"
-				>User</a
-			>
-		</div> -->
 	</svelte:fragment>
 	<slot />
 </AppShell>
