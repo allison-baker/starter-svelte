@@ -16,7 +16,7 @@
 	<div class="max-w-[1200px] mx-auto bg-surface-50-900-token p-4 h-full">
 		<p class="m-4 text-sm font-bold">
 			This todo list demonstrates in and out transitions for todo items, as well as a flip animation
-			on elements that aren't transitioning.
+			on elements that aren't transitioning. change page
 		</p>
 
 		<div class="grid grid-cols-2 gap-4 max-w-xl my-0 mx-auto">
