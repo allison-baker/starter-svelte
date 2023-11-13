@@ -39,4 +39,13 @@
 	</TabGroup>
 </div>
 
+<<<<<<< Updated upstream
 <slot />
+=======
+<main class="bg-surface-100-800-token h-full">
+	<div class="max-w-[1200px] mx-auto bg-surface-50-900-token p-4 h-full">
+		<slot />
+	</div>
+</main>
+
+>>>>>>> Stashed changes
