@@ -1,6 +1,6 @@
 <script lang="ts">
-    import { page } from '$app/stores';
-    import { goto } from '$app/navigation';
+	import { page } from '$app/stores';
+	import { goto } from '$app/navigation';
 	import { signIn } from '@auth/sveltekit/client';
 
 	let loggedIn = $page.data.session?.user;
@@ -20,9 +20,13 @@
 		{/if}
 		{#if loggedIn}
 			<p class="text-surface-900">Browse Basic Svelte Tutorials!</p>
-			<button class="btn variant-ghost-surface" on:click={() => goto('/tutorial')}>Basic Tutorials</button>
+			<button class="btn variant-ghost-surface" on:click={() => goto('/tutorial')}
+				>Basic Tutorials</button
+			>
 			<p class="text-surface-900">Browse Advanced Svelte Tutorials!</p>
-			<button class="btn variant-ghost-surface" on:click={() => goto('/advancedTutorial')}>Advanced Tutorials</button>
+			<button class="btn variant-ghost-surface" on:click={() => goto('/advancedTutorial')}
+				>Advanced Tutorials</button
+			>
 			<p class="text-surface-900">Try my todo list!</p>
 			<button class="btn variant-ghost-surface" on:click={() => goto('/todo')}>Todo List</button>
 		{/if}

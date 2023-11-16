@@ -4,7 +4,7 @@
 	import { initializeStores } from '@skeletonlabs/skeleton';
 	import { Modal, getModalStore } from '@skeletonlabs/skeleton';
 	import type { ModalSettings, ModalComponent, ModalStore } from '@skeletonlabs/skeleton';
-	import ThemeMenu from '$lib/components/ThemeMenu.svelte';
+	import ThemeMenu from '$lib/navigation/ThemeMenu.svelte';
 	import SideNav from '$lib/navigation/SideNav.svelte';
 	import { Drawer, getDrawerStore } from '@skeletonlabs/skeleton';
 	import { computePosition, autoUpdate, offset, shift, flip, arrow } from '@floating-ui/dom';
