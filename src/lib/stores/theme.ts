@@ -1,8 +1,8 @@
 import { writable } from 'svelte/store';
 import { browser } from '$app/environment';
 
-const defaultValue = 'my-custom-theme';
-const initialValue = browser ? localStorage.getItem('theme') : defaultValue;
+const defaultValue = browser ? localStorage.getItem('theme') : 'my-custom-theme';
+const initialValue = browser ? localStorage.getItem('theme') && defaultValue : defaultValue;
 
 export const theme = writable(initialValue);
 
