@@ -14,6 +14,7 @@
 		<li><a href="/tutorial" on:click={drawerClose}>Basic</a></li>
 		<li><a href="/advancedTutorial" on:click={drawerClose}>Advanced</a></li>
 		<li><a href="/todo" on:click={drawerClose}>Todo</a></li>
+		<li><a href="/planets" on:click={drawerClose}>Planets</a></li>
 		<li><a href="/user" on:click={drawerClose}>Account</a></li>
 	</ul>
 </nav>
