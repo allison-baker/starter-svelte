@@ -8,12 +8,14 @@
 		radius: string;
 		temperature: string;
 		distance: string;
+		period: string;
+		image: string;
 	}
 
 	const api_key = '1JMQnEy0RPLJV4tBNDZCow==0istE6CwLcnJjg1s';
 
 	onMount(async () => {
-		const res = await fetch('https://api.api-ninjas.com/v1/planets?min_distance_light_year=0', {
+		const res = await fetch('https://api.api-ninjas.com/v1/planets?max_distance_light_year=11.98', {
 			method: 'GET',
 			headers: {
 				'X-API-Key': api_key,

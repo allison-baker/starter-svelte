@@ -7,6 +7,8 @@ interface Planets {
     radius: string;
     temperature: string;
     distance: string;
+    period: string;
+    image: string;
 }
 
 export const planetsStore: Writable<Planets[]> = writable([]);
