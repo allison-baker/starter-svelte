@@ -2,6 +2,6 @@
     
 </script>
 
-<h1 class="m-4 text-2xl">Actions</h1>
+<h1 class="m-4 text-2xl">Advanced Binding</h1>
 
 <p class="mx-4">Sorry, this page is still under construction!</p>
