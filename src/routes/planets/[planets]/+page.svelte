@@ -3,7 +3,7 @@
 	export let data;
 
 	let hidden = 'hidden';
-	if (data.planet.image === '/images/no_results.webp') {
+	if (data.planet.image === '../../../../images/no_results.webp') {
 		hidden = '';
 	}
 </script>
@@ -13,8 +13,7 @@
 		class="max-w-[1200px] mx-auto bg-surface-50-900-token p-4 h-full justify-center items-center flex flex-col"
 	>
 		<article class="w-[500px]">
-			<section class="relative text-center text-white">
-				<img src={data.planet.image} alt="planet" class="h-36 w-full rounded-t-lg" />
+			<section class="relative text-center text-white w-full h-36 rounded-t-lg bg-cover bg-center bg-no-repeat" style="background-image: url({data.planet.image});">
 				<p
 					id="noTag"
 					class="{hidden} absolute top-[50%] bottom-[50%] w-full h-full font-bold text-lg"

@@ -21,7 +21,7 @@ export async function load({ params, fetch }) {
 	const image = await imageRes.json();
 	let imageLink: string;
 	if (image.collection.items.length === 0) {
-		imageLink = '/images/no_results.webp';
+		imageLink = '../../../../images/no_results.webp';
 	} else {
 		const index = Math.floor(Math.random() * image.collection.items.length);
 		imageLink = image.collection.items[index].links[0].href;

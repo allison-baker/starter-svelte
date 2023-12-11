@@ -72,8 +72,8 @@
 							</svg>
 						</span>
 					</button>
-					<img src={imageSrc} height="60" width="60" alt="personal logo" class="mr-4" />
-					<strong class="text-3xl">Al Baker</strong>
+					<a href="/"><img src={imageSrc} height="60" width="60" alt="personal logo" class="mr-4" /></a>
+					<a href="/"><strong class="text-3xl">Al Baker</strong></a>
 				</div>
 			</svelte:fragment>
 			<svelte:fragment slot="trail">
